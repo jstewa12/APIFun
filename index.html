@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+    <title>A Chuck Norris Joke for the Quarantine</title>
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <style>
+        h1 {
+            text-align:center;
+            color:#00BFFF;
+            font-family:Abril Fatface;
+            font-size:40px;
+        }
+
+        button {
+            display:block;
+            margin:0 auto;
+            justify-content:center;
+            color:#00BFFF;
+            font-family:Abril Fatface;
+            font-size:20px;
+        }
+
+        div {
+            font-family:Abril Fatface;
+            font-size:20px;
+            text-align:center;
+        }
+
+        p {
+            text-align:center;
+            color:#00BFFF;
+            font-family:Abril Fatface;
+            font-size:15px;
+            margin:0px 20px;
+        }
+    </style>
+    <script language="javascript">
+        function getQuote() {
+            chuck1 = new XMLHttpRequest();
+            chuck1.open("GET", "https://api.chucknorris.io/jokes/random?category=movie", true);
+            chuck1.onreadystatechange = function() {
+                if (chuck1.readyState == 4 && chuck1.status == 200) {
+                    chuck1TXT = chuck1.responseText;
+                    chuck1OBJ = JSON.parse(chuck1TXT);
+                    document.getElementById("data").innerHTML = chuck1OBJ["value"] + "<br /><br />";
+                } else if (chuck1.readyState == 4 && request.status != 200) {
+                    document.getElementById("data").innerHTML = "Something is wrong!";
+                } else if (chuck1.readyState == 3) {
+                    document.getElementById("data").innerHTML = "Too soon! Try again";
+                }
+            }
+
+            chuck1.send();
+        }
+    </script>
+</head>
+<body>
+    <h1>May I Interest You in a Chuck Norris Joke in this Trying Quarantine?</h1>
+    <div id="data"></div>
+    <br />
+    <button onclick="getQuote()">Absolutely</button>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <p>The API I selected, Chucknorris.io, is an incredibly useful API that,
+        when called, returns a Chuck Norris fact in JSON format, either
+        completely at random or randomly from within a specific category.</p>
+    <br />
+    <p>There aren't many options</p>
+    <br />
+    <p>The link where I found this API is
+       https://github.com/public-apis/public-apis#personality</p>
+</body>
+</html>
