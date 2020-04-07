@@ -10,6 +10,7 @@
             color:#00BFFF;
             font-family:Abril Fatface;
             font-size:40px;
+            margin: 10px 10px 10px 25px;
         }
 
         button {
@@ -44,6 +45,7 @@
                 if (chuck1.readyState == 4 && chuck1.status == 200) {
                     chuck1TXT = chuck1.responseText;
                     chuck1OBJ = JSON.parse(chuck1TXT);
+                    document.getElementById("h1").innerHTML = "May I Interest You in Another Chuck Norris Joke in this Trying Quarantine?";
                     document.getElementById("data").innerHTML = chuck1OBJ["value"] + "<br /><br />";
                 } else if (chuck1.readyState == 4 && request.status != 200) {
                     document.getElementById("data").innerHTML = "Something is wrong!";
@@ -57,7 +59,7 @@
     </script>
 </head>
 <body>
-    <div class="h1">May I Interest You in a Chuck Norris Joke in this Trying Quarantine?</div>
+    <div class="h1" id="h1">May I Interest You in a Chuck Norris Joke in this Trying Quarantine?</div>
     <div class="data" id="data"></div>
     <br />
     <button onclick="getQuote()">Absolutely</button>
