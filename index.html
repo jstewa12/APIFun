@@ -65,10 +65,26 @@
     <button onclick="getQuote()">Absolutely</button>
     <br /><br /><br /><br /><br /><br /><br /><br />
     <p>The API I selected, Chucknorris.io, is an incredibly useful API that,
-        when called, returns a Chuck Norris fact in JSON format, either
-        completely at random or randomly from within a specific category.</p>
+        when called, returns a Chuck Norris fact in JSON-object format, along
+        with an ID for the fact and a URL through which it can also be accessed. 
+        These facts are completely factual and not at all absurdist jokes that
+        riff off of pop culture and modern society. The facts can be accessed
+        using the given URL or completely at random, either from the complete 
+        list of all Chuck Norris facts or from a certain category of fact 
+        within that list (i.e. movie-related facts, sports-related facts)</p>
     <br />
-    <p>There aren't many options</p>
+    <p>In order to get my desired data from the Chuck Norris API, I utilized
+        a GET request and the URL the API's website cites as a method to get 
+        random Chuck Norris facts from a certain category. I specified the movie
+        category within the URL, meaning that the API would return random 
+        Chuck Norris facts that related to movies.</p>
+    <br />
+    <p>Because the API is very niche and is dedicated to a specific purpose,
+        there aren't many applications where this API would be useful. One
+        would be a Chuck Norris fact website, in which someone might include
+        a Chuck Norris joke to add humor and show Chuck Norris' influence.
+        The Chuck Norris joke categories might provide some interesting 
+        ways to do other applications. </p>
     <br />
     <p style="margin:0px 0px 40px 0px;">The link where I found this API is
        https://github.com/public-apis/public-apis#personality</p>
