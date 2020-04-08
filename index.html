@@ -40,7 +40,7 @@
     <script language="javascript">
         function getQuote() {
             chuck1 = new XMLHttpRequest();
-            chuck1.open("GET", "https://api.chucknorris.io/jokes/random?category=movie", true);
+            chuck1.open("GET", "https://api.chucknorris.io/jokes/random?category=dev", true);
             chuck1.onreadystatechange = function() {
                 if (chuck1.readyState == 4 && chuck1.status == 200) {
                     chuck1TXT = chuck1.responseText;
@@ -68,19 +68,26 @@
         when called, returns a Chuck Norris fact in JSON-object format, along
         with an ID for the fact and a URL through which it can also be accessed. 
         These facts are completely factual and not at all absurdist jokes that
-        riff off of pop culture and modern society. The facts can be accessed
-        using the given URL or completely at random, either from the complete 
-        list of all Chuck Norris facts or from a certain category of fact 
-        within that list (i.e. movie-related facts, sports-related facts)</p>
+        riff off of pop culture and modern society. Each fact can be accessed
+        using the URL contained in its associated JSON object, or completely 
+        at random. Random selection can be done either from the complete 
+        list of all Chuck Norris facts stored in the API, or from a certain 
+        subset of facts within a certain category (i.e. movie-related facts, 
+        sports-related facts)</p>
     <br />
     <p>In order to get my desired data from the Chuck Norris API, I utilized
-        a GET request and the URL the API's website cites as a method to get 
-        random Chuck Norris facts from a certain category. I specified the movie
+        a GET request with the URL the API's website cites to get random
+        Chuck Norris facts from a certain category. I specified the movie
         category within the URL, meaning that the API would return random 
         Chuck Norris facts that related to movies.</p>
     <br />
     <p>Because the API is very niche and is dedicated to a specific purpose,
-        there aren't many applications where this API would be useful. One
+        one would have to get creative to use this API in their own web
+        applications. One potential application one could use this API for is
+        a Chuck Norris biographical website, if the creator wanted to add
+        humor and show Chuck Norris' influence and legacy through the facts.
+        Another potential application would be 
+        there aren't many applications where this API would fbe useful. One
         would be a Chuck Norris fact website, in which someone might include
         a Chuck Norris joke to add humor and show Chuck Norris' influence.
         The Chuck Norris joke categories might provide some interesting 
